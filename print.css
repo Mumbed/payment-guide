@@ -1,0 +1,131 @@
+/* A4 인쇄 설정 */
+@page {
+    size: A4;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 0;
+    background: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+/* A4 페이지 */
+.a4-page {
+    width: 210mm;
+    height: 297mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20mm 15mm;
+    background: white;
+}
+
+/* 상단: 가게명 */
+.header-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70mm;
+}
+
+.store-name {
+    font-size: 48px;
+    font-weight: 800;
+    color: #000;
+    text-align: center;
+    letter-spacing: -1px;
+}
+
+/* 중간: QR코드 */
+.qr-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100mm;
+}
+
+#qrcode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#qrcode img {
+    width: 250px !important;
+    height: 250px !important;
+    display: block;
+}
+
+/* 하단: 계좌정보 */
+.footer-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60mm;
+}
+
+.account-info {
+    text-align: center;
+}
+
+.bank-account {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.account-holder {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    letter-spacing: 0.3px;
+}
+
+/* 인쇄 최적화 */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        width: 210mm;
+        height: 297mm;
+    }
+
+    .a4-page {
+        padding: 20mm 15mm;
+        margin: 0;
+    }
+
+    * {
+        box-shadow: none !important;
+        border: none !important;
+    }
+}
+
+/* 화면 표시용 (인쇄 전 미리보기) */
+@media screen {
+    body {
+        background: #e8e8e8;
+        padding: 20px;
+        margin: 0;
+    }
+
+    .a4-page {
+        background: white;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        margin: 0 auto;
+    }
+}

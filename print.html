@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>명성왕만두 - 송금 안내</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="print.css">
+</head>
+<body>
+    <div class="a4-page">
+        <!-- 상단: 가게명 -->
+        <div class="header-section">
+            <h1 class="store-name">명성왕만두</h1>
+        </div>
+
+        <!-- 중간: QR코드 -->
+        <div class="qr-section">
+            <div id="qrcode"></div>
+        </div>
+
+        <!-- 하단: 계좌정보 -->
+        <div class="footer-section">
+            <div class="account-info">
+                <p class="bank-account">국민은행 034501-04-073572</p>
+                <p class="account-holder">예금주: 원재인</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // QR코드 생성 (GitHub Pages 링크로 연결)
+        const qrUrl = 'https://Mumbed.github.io/payment-guide';
+        new QRCode(document.getElementById('qrcode'), {
+            text: qrUrl,
+            width: 250,
+            height: 250,
+            colorDark: '#000000',
+            colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.H
+        });
+
+        // 인쇄 시작 (선택사항)
+        // window.print();
+    </script>
+</body>
+</html>
