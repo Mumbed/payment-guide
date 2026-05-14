@@ -9,7 +9,8 @@ const CONFIG = {
 
 // DOM 요소
 const tossBtn = document.getElementById('tossBtn');
-const kakaoBtn = document.getElementById('kakaoBtn');
+const wooriBtn = document.getElementById('wooriBtn');
+const shinhanBtn = document.getElementById('shinhanBtn');
 const copyBtn = document.getElementById('copyBtn');
 const toast = document.getElementById('toast');
 
@@ -73,24 +74,45 @@ function sendViaToss() {
     }
 }
 
-// 카카오페이 송금
-function sendViaKakaopay() {
+// 우리은행 송금
+function sendViaWoori() {
     if (isMobile()) {
-        // 모바일: 카카오톡/카카오페이 앱 링크 시도
-        const kakaoAppUrl = 'kakaotalk://send';
+        // 모바일: 우리은행 앱 링크 시도
+        const wooriAppUrl = 'wooribankapi://transfer';
 
         const startTime = Date.now();
-        window.location.href = kakaoAppUrl;
+        window.location.href = wooriAppUrl;
 
         // 앱이 없으면 웹으로 폴백
         setTimeout(() => {
             if (Date.now() - startTime < 1500) {
-                window.location.href = 'https://www.kakaopay.com';
+                window.location.href = 'https://www.wooribank.com';
             }
         }, 1000);
     } else {
         // PC: 웹사이트로 바로 이동
-        window.location.href = 'https://www.kakaopay.com';
+        window.location.href = 'https://www.wooribank.com';
+    }
+}
+
+// 신한은행 송금
+function sendViaShinhan() {
+    if (isMobile()) {
+        // 모바일: 신한은행 앱 링크 시도
+        const shinhanAppUrl = 'shinhancard://transfer';
+
+        const startTime = Date.now();
+        window.location.href = shinhanAppUrl;
+
+        // 앱이 없으면 웹으로 폴백
+        setTimeout(() => {
+            if (Date.now() - startTime < 1500) {
+                window.location.href = 'https://www.shinhan.com';
+            }
+        }, 1000);
+    } else {
+        // PC: 웹사이트로 바로 이동
+        window.location.href = 'https://www.shinhan.com';
     }
 }
 
@@ -98,7 +120,8 @@ function sendViaKakaopay() {
 // 이벤트 리스너
 copyBtn.addEventListener('click', copyAccount);
 tossBtn.addEventListener('click', sendViaToss);
-kakaoBtn.addEventListener('click', sendViaKakaopay);
+wooriBtn.addEventListener('click', sendViaWoori);
+shinhanBtn.addEventListener('click', sendViaShinhan);
 
 // 페이지 로드 시 계좌번호 자동 포커스 (모바일)
 window.addEventListener('load', () => {

@@ -46,7 +46,7 @@ body {
 .header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 32px 24px;
+    padding: 20px 24px;
     text-align: center;
 }
 
@@ -58,9 +58,9 @@ body {
 }
 
 .subtitle {
-    font-size: 16px;
-    opacity: 0.9;
-    font-weight: 500;
+    font-size: 18px;
+    opacity: 0.95;
+    font-weight: 600;
 }
 
 /* 메인 콘텐츠 */
@@ -126,33 +126,34 @@ body {
 /* 결제 버튼 */
 .payment-btn {
     width: 100%;
-    padding: 18px 24px;
-    margin-bottom: 12px;
+    padding: 24px 24px;
+    margin-bottom: 16px;
     border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 16px;
     transition: all 0.2s ease;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+    min-height: 72px;
 }
 
 .payment-btn:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
 }
 
 .btn-icon {
-    font-size: 24px;
+    font-size: 32px;
 }
 
 .btn-text {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 /* 토스 버튼 */
@@ -167,16 +168,36 @@ body {
     box-shadow: 0 6px 20px rgba(51, 102, 255, 0.4);
 }
 
-/* 카카오페이 버튼 */
-.kakao-btn {
-    background: #ffeb00;
-    color: #2c2c2c;
-    box-shadow: 0 4px 15px rgba(255, 235, 0, 0.3);
+/* 은행 버튼 */
+.bank-btn {
+    background: linear-gradient(135deg, #34a853 0%, #1e7d34 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(52, 168, 83, 0.3);
 }
 
-.kakao-btn:hover {
-    background: #ffe800;
-    box-shadow: 0 6px 20px rgba(255, 235, 0, 0.4);
+.bank-btn:hover {
+    background: linear-gradient(135deg, #2d9645 0%, #1a6a2b 100%);
+    box-shadow: 0 6px 20px rgba(52, 168, 83, 0.4);
+}
+
+.woori-btn {
+    background: linear-gradient(135deg, #003f7f 0%, #002147 100%);
+    box-shadow: 0 4px 15px rgba(0, 63, 127, 0.3);
+}
+
+.woori-btn:hover {
+    background: linear-gradient(135deg, #003570 0%, #001f3f 100%);
+    box-shadow: 0 6px 20px rgba(0, 63, 127, 0.4);
+}
+
+.shinhan-btn {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.shinhan-btn:hover {
+    background: linear-gradient(135deg, #d63e2f 0%, #a83022 100%);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
 }
 
 /* 계좌복사 버튼 */
@@ -280,9 +301,13 @@ body {
     }
 
     .payment-btn {
-        padding: 20px 24px;
-        font-size: 17px;
-        min-height: 56px;
+        padding: 28px 24px;
+        font-size: 19px;
+        min-height: 80px;
+    }
+
+    .btn-icon {
+        font-size: 36px;
     }
 }
 
