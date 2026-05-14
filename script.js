@@ -4,17 +4,15 @@ const CONFIG = {
     account: '034501-04-073572',
     accountNumber: '03450104073572',
     accountHolder: '원재인',
-    bankCode: '004' // 국민은행 코드
+    bankCode: '004'
 };
 
 // DOM 요소
 const tossBtn = document.getElementById('tossBtn');
-const wooriBtn = document.getElementById('wooriBtn');
-const shinhanBtn = document.getElementById('shinhanBtn');
 const copyBtn = document.getElementById('copyBtn');
 const toast = document.getElementById('toast');
 
-// 토스트 알림 함수
+// 토스트 알림
 function showToast(message, duration = 2000) {
     toast.textContent = message;
     toast.classList.add('show');
@@ -23,7 +21,7 @@ function showToast(message, duration = 2000) {
     }, duration);
 }
 
-// 계좌번호 복사 함수
+// 계좌번호 복사
 async function copyAccount() {
     try {
         await navigator.clipboard.writeText(CONFIG.account);
@@ -47,16 +45,18 @@ function isMobile() {
 
 // 토스 송금
 function sendViaToss() {
+    const bankMap = {
+        '국민': '국민',
+        '신한': '신한',
+        '우리': '우리',
+        '하나': '하나',
+        '농협': '농협'
+    };
+
+    const bank = bankMap[CONFIG.bank.split('은행')[0]] || '국민';
+
     if (isMobile()) {
         // 모바일: 앱 스킴 사용
-        const bankMap = {
-            '국민': '국민',
-            '신한': '신한',
-            '우리': '우리',
-            '하나': '하나',
-            '농협': '농협'
-        };
-        const bank = bankMap[CONFIG.bank.split('은행')[0]] || '국민';
         const tossAppUrl = `supertoss://send?bank=${bank}&accountNo=${CONFIG.accountNumber}`;
 
         const startTime = Date.now();
@@ -74,62 +74,6 @@ function sendViaToss() {
     }
 }
 
-// 우리은행 송금
-function sendViaWoori() {
-    if (isMobile()) {
-        // 모바일: 우리은행 앱 링크 시도
-        const wooriAppUrl = 'wooribankapi://transfer';
-
-        const startTime = Date.now();
-        window.location.href = wooriAppUrl;
-
-        // 앱이 없으면 웹으로 폴백
-        setTimeout(() => {
-            if (Date.now() - startTime < 1500) {
-                window.location.href = 'https://www.wooribank.com';
-            }
-        }, 1000);
-    } else {
-        // PC: 웹사이트로 바로 이동
-        window.location.href = 'https://www.wooribank.com';
-    }
-}
-
-// 신한은행 송금
-function sendViaShinhan() {
-    if (isMobile()) {
-        // 모바일: 신한은행 앱 링크 시도
-        const shinhanAppUrl = 'shinhancard://transfer';
-
-        const startTime = Date.now();
-        window.location.href = shinhanAppUrl;
-
-        // 앱이 없으면 웹으로 폴백
-        setTimeout(() => {
-            if (Date.now() - startTime < 1500) {
-                window.location.href = 'https://www.shinhan.com';
-            }
-        }, 1000);
-    } else {
-        // PC: 웹사이트로 바로 이동
-        window.location.href = 'https://www.shinhan.com';
-    }
-}
-
-
 // 이벤트 리스너
-copyBtn.addEventListener('click', copyAccount);
 tossBtn.addEventListener('click', sendViaToss);
-wooriBtn.addEventListener('click', sendViaWoori);
-shinhanBtn.addEventListener('click', sendViaShinhan);
-
-// 페이지 로드 시 계좌번호 자동 포커스 (모바일)
-window.addEventListener('load', () => {
-    // 선택 사항: 로드 완료 표시
-    console.log('Payment guide page loaded');
-});
-
-// 모바일 주소창 숨기기
-window.addEventListener('scroll', () => {
-    window.scrollTo(0, 0);
-});
+copyBtn.addEventListener('click', copyAccount);

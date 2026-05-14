@@ -25,7 +25,7 @@ body {
     width: 100%;
     max-width: 500px;
     background: white;
-    border-radius: 20px;
+    border-radius: 24px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     animation: slideUp 0.3s ease-out;
@@ -46,113 +46,98 @@ body {
 .header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 20px 24px;
+    padding: 24px 24px;
     text-align: center;
 }
 
-.header h1 {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    letter-spacing: -0.5px;
-}
-
 .subtitle {
-    font-size: 18px;
-    opacity: 0.95;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 /* 메인 콘텐츠 */
 .main {
-    padding: 32px 24px;
+    padding: 40px 24px;
 }
 
 /* 계좌 정보 섹션 */
 .account-section {
-    margin-bottom: 40px;
+    margin-bottom: 48px;
 }
 
 .account-card {
-    background: linear-gradient(135deg, #f5f7fa 0%, #f0f2f5 100%);
-    border: 2px solid #e8eaef;
+    background: #f8f9fa;
     border-radius: 16px;
-    padding: 28px;
+    padding: 32px 24px;
     text-align: center;
 }
 
 .bank-info {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 }
 
 .bank-name {
-    font-size: 14px;
-    color: #666;
-    font-weight: 500;
+    font-size: 13px;
+    color: #999;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 
 .account-number {
-    font-size: 28px;
-    font-weight: 700;
-    color: #333;
+    font-size: 32px;
+    font-weight: 800;
+    color: #000;
     font-family: 'Courier New', monospace;
-    letter-spacing: 2px;
-    padding: 12px 0;
+    letter-spacing: 1px;
+    padding: 8px 0;
 }
 
 .account-holder {
-    font-size: 16px;
-    color: #999;
-    font-weight: 500;
+    font-size: 15px;
+    color: #666;
+    font-weight: 600;
 }
 
 /* 버튼 섹션 */
 .button-section {
-    margin-bottom: 32px;
-}
-
-.section-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 /* 결제 버튼 */
 .payment-btn {
     width: 100%;
-    padding: 24px 24px;
-    margin-bottom: 16px;
+    padding: 20px 24px;
     border: none;
-    border-radius: 16px;
-    font-size: 18px;
+    border-radius: 14px;
+    font-size: 17px;
     font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 12px;
     transition: all 0.2s ease;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
-    min-height: 72px;
+    min-height: 64px;
 }
 
 .payment-btn:active {
-    transform: scale(0.97);
+    transform: scale(0.96);
 }
 
 .btn-icon {
-    font-size: 32px;
+    font-size: 28px;
 }
 
 .btn-text {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
 }
 
@@ -160,7 +145,7 @@ body {
 .toss-btn {
     background: linear-gradient(135deg, #3366ff 0%, #1a4fbf 100%);
     color: white;
-    box-shadow: 0 4px 15px rgba(51, 102, 255, 0.3);
+    box-shadow: 0 4px 16px rgba(51, 102, 255, 0.35);
 }
 
 .toss-btn:hover {
@@ -168,108 +153,16 @@ body {
     box-shadow: 0 6px 20px rgba(51, 102, 255, 0.4);
 }
 
-/* 은행 버튼 */
-.bank-btn {
-    background: linear-gradient(135deg, #34a853 0%, #1e7d34 100%);
-    color: white;
-    box-shadow: 0 4px 15px rgba(52, 168, 83, 0.3);
-}
-
-.bank-btn:hover {
-    background: linear-gradient(135deg, #2d9645 0%, #1a6a2b 100%);
-    box-shadow: 0 6px 20px rgba(52, 168, 83, 0.4);
-}
-
-.woori-btn {
-    background: linear-gradient(135deg, #003f7f 0%, #002147 100%);
-    box-shadow: 0 4px 15px rgba(0, 63, 127, 0.3);
-}
-
-.woori-btn:hover {
-    background: linear-gradient(135deg, #003570 0%, #001f3f 100%);
-    box-shadow: 0 6px 20px rgba(0, 63, 127, 0.4);
-}
-
-.shinhan-btn {
-    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
-}
-
-.shinhan-btn:hover {
-    background: linear-gradient(135deg, #d63e2f 0%, #a83022 100%);
-    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
-}
-
 /* 계좌복사 버튼 */
 .copy-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    background: #f0f0f0;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .copy-btn:hover {
-    background: linear-gradient(135deg, #5568d3 0%, #653a8a 100%);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-}
-
-/* 은행 옵션 */
-.bank-details {
-    margin-top: 20px;
-}
-
-.expand-title {
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    color: #667eea;
-    padding: 12px;
-    text-align: center;
-    border: 2px dashed #667eea;
-    border-radius: 8px;
-    transition: all 0.2s ease;
-}
-
-.expand-title:hover {
-    background: rgba(102, 126, 234, 0.05);
-}
-
-.bank-options {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-top: 12px;
-}
-
-.bank-btn {
-    padding: 12px 8px;
-    background: #f5f7fa;
-    border: 2px solid #e8eaef;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #666;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.bank-btn:hover {
-    border-color: #667eea;
-    color: #667eea;
-    background: rgba(102, 126, 234, 0.05);
-}
-
-/* 안내문 */
-.info-section {
-    background: #f0f4ff;
-    padding: 16px;
-    border-radius: 12px;
-    border-left: 4px solid #667eea;
-}
-
-.info-text {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.6;
+    background: #e8e8e8;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 /* 토스트 알림 */
@@ -297,49 +190,55 @@ body {
 /* 모바일 최적화 (375px 이상) */
 @media (min-width: 375px) {
     .account-number {
-        font-size: 32px;
+        font-size: 36px;
     }
 
     .payment-btn {
-        padding: 28px 24px;
-        font-size: 19px;
-        min-height: 80px;
+        padding: 22px 24px;
+        font-size: 18px;
+        min-height: 70px;
     }
 
     .btn-icon {
-        font-size: 36px;
+        font-size: 32px;
     }
 }
 
 /* 태블릿 (768px 이상) */
 @media (min-width: 768px) {
     .container {
-        border-radius: 24px;
+        border-radius: 28px;
     }
 
     .header {
-        padding: 40px 32px;
+        padding: 32px 32px;
     }
 
-    .header h1 {
-        font-size: 36px;
+    .subtitle {
+        font-size: 24px;
     }
 
     .main {
-        padding: 40px 32px;
+        padding: 48px 40px;
     }
 
     .account-card {
-        padding: 32px;
+        padding: 40px 32px;
     }
 
     .account-number {
-        font-size: 36px;
-        padding: 16px 0;
+        font-size: 40px;
+        padding: 12px 0;
     }
 
-    .bank-options {
-        grid-template-columns: 1fr 1fr 1fr;
+    .payment-btn {
+        padding: 24px 32px;
+        font-size: 19px;
+        min-height: 76px;
+    }
+
+    .btn-icon {
+        font-size: 36px;
     }
 }
 
@@ -356,7 +255,6 @@ body {
 
     .account-card {
         background: #2d2d3d;
-        border-color: #3d3d4d;
     }
 
     .bank-name,
@@ -368,32 +266,13 @@ body {
         color: #fff;
     }
 
-    .section-title {
+    .copy-btn {
+        background: #3d3d4d;
         color: #eee;
     }
 
-    .expand-title {
-        color: #667eea;
-        border-color: #667eea;
-    }
-
-    .bank-btn {
-        background: #2d2d3d;
-        border-color: #3d3d4d;
-        color: #aaa;
-    }
-
-    .bank-btn:hover {
-        background: rgba(102, 126, 234, 0.1);
-        color: #667eea;
-    }
-
-    .info-section {
-        background: rgba(102, 126, 234, 0.1);
-    }
-
-    .info-text {
-        color: #bbb;
+    .copy-btn:hover {
+        background: #4d4d5d;
     }
 
     .toast {
@@ -404,11 +283,7 @@ body {
 /* 터치 기기 최적화 */
 @media (hover: none) and (pointer: coarse) {
     .payment-btn {
-        min-height: 56px;
-    }
-
-    .expand-title {
-        padding: 16px;
+        min-height: 66px;
     }
 
     button {
