@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>송금 안내</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>명성왕만두</h1>
+            <p class="subtitle">송금 안내</p>
+        </header>
+
+        <main class="main">
+            <!-- 계좌 정보 섹션 -->
+            <section class="account-section">
+                <div class="account-card">
+                    <div class="bank-info">
+                        <p class="bank-name">국민은행</p>
+                        <p class="account-number">034501-04-073572</p>
+                        <p class="account-holder">원재인</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 버튼 섹션 -->
+            <section class="button-section">
+                <h2 class="section-title">아래 방법으로 송금해주세요</h2>
+
+                <!-- 토스 버튼 -->
+                <button class="payment-btn toss-btn" id="tossBtn" aria-label="토스로 송금">
+                    <span class="btn-icon">💳</span>
+                    <span class="btn-text">토스로 송금하기</span>
+                </button>
+
+                <!-- 카카오페이 버튼 -->
+                <button class="payment-btn kakao-btn" id="kakaoBtn" aria-label="카카오페이로 송금">
+                    <span class="btn-icon">📱</span>
+                    <span class="btn-text">카카오페이로 송금</span>
+                </button>
+
+                <!-- 계좌복사 버튼 -->
+                <button class="payment-btn copy-btn" id="copyBtn" aria-label="계좌번호 복사">
+                    <span class="btn-icon">📋</span>
+                    <span class="btn-text">계좌번호 복사하기</span>
+                </button>
+            </section>
+
+            <!-- 안내문 -->
+            <section class="info-section">
+                <p class="info-text">토스나 카카오페이가 없으신 분은 계좌번호를 복사하신 후 본인 은행 앱에서 송금해주세요.</p>
+            </section>
+        </main>
+
+        <!-- 토스트 알림 -->
+        <div id="toast" class="toast"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
